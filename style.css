@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(29, 32, 31);
+    height: 100vh;
+}
+
+label {
+    font-size: 16px;
+    color: #fff;
+}
+
+input {
+    margin: 4px 0px;
+    font-size: 20px;
+    padding: 6px;
+    border-radius: 20px;
+    border: none;
+    background-color: #27362e34;
+    color: #fff;
+}
+
+/* div {
+    border: solid 1px #000;
+    padding: 4px;
+    width: 40%;
+    font-size: 16px;
+    margin: 10px;
+} */
+
+button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.resposta {
+    color: green;
+}
+
+main {
+    padding-left: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1 {
+    color: white;
+    letter-spacing: 2px;
+}
+
+h3 {
+    color: #fff;
+}
+
+#distanceForm {
+    display: flex;
+    margin-top: 20px;
+}
+
+.subtitulo {
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+.params {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.params > div {
+    display: flex;
+}
+
+.params > div > div {
+    margin: 0px 5px;
+}
+
+.fs-1 {
+    font-size: 16px;
+}
+
+#result {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.rodar {
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 1000px) {
+    div {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Tela</title>
+</head>
+<body>
+    <div>
+        <h1>Reta paramétrica</h1>
+        <label for="ponto1">
+            Insira o ponto A(x, y, z) pertencente à reta (separado por espaços):<br>
+            <input type="text" id="ponto1">
+        </label><br>
+        <label for="vetor1">
+            Insira o vetor diretor V(x, y, z) (separado por espaços):<br>
+            <input type="text" id="vetor1">
+        </label><br>
+        <button onclick="retaParametrica()">Executar</button>
+        <div id="resp1" class="resposta"></div>
+    </div>
+    <div>
+        <h1>Equação Geral</h1>
+        <label for="ponto2">
+            Insira o ponto P(x, y, z) pertencente ao plano (separado por espaços):<br>
+            <input type="text" id="ponto2">
+        </label><br>
+        <label for="vetor2">
+            Insira o vetor normal N(x, y, z) ao plano (separado por espaços):<br>
+            <input type="text" id="vetor2">
+        </label><br>
+        <button onclick="equacaoGeral()">Executar</button>
+        <div id="resp2" class="resposta"></div>
+    </div>
+    <div>
+        <h1>Distância de um ponto a um plano</h1>
+        <label for="coeficiente">
+            Insira os coeficientes da equação geral do plano (Ax + By + Cz + D = 0):<br>
+            <input type="text" id="coeficiente">
+        </label><br>
+        <label for="ponto3">
+            Insira o ponto P(x, y, z) (separado por espaços):<br>
+            <input type="text" id="ponto3">
+        </label><br>
+        <button onclick="distanciaPonto()">Executar</button>
+        <div id="resp3" class="resposta"></div>
+    </div>
+    <div>
+        <h1>Distância de um ponto a uma reta</h1>
+        <label for="ponto4">
+            Insira o ponto P(x, y, z) (separado por espaços):<br>
+            <input type="text" id="ponto4">
+        </label><br>
+        <label for="ponto5">
+            Insira o ponto A(x, y, z) pertencente à reta (separado por espaços):<br>
+            <input type="text" id="ponto5">
+        </label><br>
+        <label for="vetor3">
+            Insira o vetor diretor V(x, y, z) da reta (separado por espaços):<br>
+            <input type="text" id="vetor3">
+        </label><br>
+        <button onclick="distanciaPontoReta()">Executar</button>
+        <div id="resp4" class="resposta"></div>
+    </div>
+</body>
+</html>
