@@ -17,16 +17,21 @@ body {
 label {
     font-size: 16px;
     color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 input {
-    margin: 4px 0px;
+    margin: 10px 0px;
     font-size: 20px;
     padding: 6px;
     border-radius: 20px;
     border: none;
     background-color: #27362e34;
     color: #fff;
+    text-align: center;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 60%);
 }
 
 /* div {
@@ -64,7 +69,7 @@ h3 {
     color: #fff;
 }
 
-#distanceForm {
+.distanceForm {
     display: flex;
     margin-top: 20px;
 }
@@ -94,7 +99,7 @@ h3 {
     font-size: 16px;
 }
 
-#result {
+.result {
     color: #fff;
     font-size: 20px;
     margin-top: 5px;
@@ -102,6 +107,10 @@ h3 {
 
 .rodar {
     margin: 10px 0px;
+}
+
+.plano2 {
+    margin-left: 40px;
 }
 
 @media screen and (max-width: 1000px) {

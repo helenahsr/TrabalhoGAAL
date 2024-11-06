@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <script src="app.js" defer></script>
+    <script src="menu.js" defer></script>
+    <title>Trabalho de GAAL</title>
+</head>
+
+<body>
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div>
+        <ul>
+            <li class="item-menu ativo">
+                <a href="index.html">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="text-link">Home</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex1.html">
+                    <span class="icon"><i class="bi bi-1-square"></i></span>
+                    <span class="text-link">Exercício 1</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex2.html">
+                    <span class="icon"><i class="bi bi-2-square"></i></span>
+                    <span class="text-link">Exercício 2</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex3.html">
+                    <span class="icon"><i class="bi bi-3-square"></i></span>
+                    <span class="text-link">Exercício 3</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="reta.html">
+                    <span class="icon"><i class="bi bi-4-square"></i></span>
+                    <span class="text-link">Exercício 4</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex5.html">
+                    <span class="icon"><i class="bi bi-5-square"></i></span>
+                    <span class="text-link">Exercício 5</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex6.html">
+                    <span class="icon"><i class="bi bi-6-square"></i></span>
+                    <span class="text-link">Exercício 6</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Distância de um ponto a um plano</h1>
+        <label for="coeficiente">
+            Insira os coeficientes da equação geral do plano (Ax + By + Cz + D = 0):<br>
+            <input type="text" id="coeficiente">
+        </label><br>
+        <label for="ponto3">
+            Insira o ponto P(x, y, z) (separado por espaços):<br>
+            <input type="text" id="ponto3">
+        </label><br>
+        <button onclick="distanciaPonto()">Executar</button>
+        <div id="resp3" class="resposta"></div>
+    </main>
+    <script>
+        function distanciaPonto() {
+            let [A, B, C, D] = document.getElementById("coeficiente").value.split(" ").map(Number);
+            let P = document.getElementById("ponto3").value.split(" ").map(Number);
+            let distancia = Math.abs(A * P[0] + B * P[1] + C * P[2] + D) / Math.sqrt(A ** 2 + B ** 2 + C ** 2);
+            if (distancia === 0) {
+                document.getElementById("resp3").innerHTML = ("O ponto está contido no plano, então a distância é 0.");
+            } else {
+                document.getElementById("resp3").innerHTML = (`A distância do ponto ao plano é: ${distancia}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
