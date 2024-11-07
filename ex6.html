@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <script src="app.js" defer></script>
+    <script src="menu.js" defer></script>
+    <title>Trabalho de GAAL</title>
+</head>
+
+<body>
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="bi bi-list" id="btn-exp"></i>
+        </div>
+        <ul>
+            <li class="item-menu ativo">
+                <a href="index.html">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="text-link">Home</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex1.html">
+                    <span class="icon"><i class="bi bi-1-square"></i></span>
+                    <span class="text-link">Exercício 1</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex2.html">
+                    <span class="icon"><i class="bi bi-2-square"></i></span>
+                    <span class="text-link">Exercício 2</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex3.html">
+                    <span class="icon"><i class="bi bi-3-square"></i></span>
+                    <span class="text-link">Exercício 3</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="reta.html">
+                    <span class="icon"><i class="bi bi-4-square"></i></span>
+                    <span class="text-link">Exercício 4</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex5.html">
+                    <span class="icon"><i class="bi bi-5-square"></i></span>
+                    <span class="text-link">Exercício 5</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="ex6.html">
+                    <span class="icon"><i class="bi bi-6-square"></i></span>
+                    <span class="text-link">Exercício 6</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Calcular a Distância entre Retas no Espaço</h1>
+        <div class="distanceForm2">
+            <div class="distanceForm2">
+                <h3>Entrada para a reta R1</h3>
+                <div>
+                    <label>Ponto P1 (x, y, z): </label>
+                    <input type="number" id="P1x" required>
+                    <input type="number" id="P1y" required>
+                    <input type="number" id="P1z" required>
+                    <label>Direção d1 (dx, dy, dz): </label>
+                    <input type="number" id="d1x" required>
+                    <input type="number" id="d1y" required>
+                    <input type="number" id="d1z" required>
+                </div>
+            </div>
+            <div class="distanceForm2">
+                <h3>Entrada para a reta R2</h3>
+                <div>
+                    <label>Ponto P2 (x, y, z): </label>
+                    <input type="number" id="P2x" equired>
+                    <input type="number" id="P2y" equired>
+                    <input type="number" id="P2z" equired>
+                    <br>
+                    <label>Direção d2 (dx, dy, dz): </label>
+                    <input type="number" id="d2x" required>
+                    <input type="number" id="d2y" required>
+                    <input type="number" id="d2z" required>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <button onclick="calcularDistancia()">Calcular Distância</button>
+
+        <h3>Resultado:</h3>
+        <p id="resultado" class="subtitulo"></p>
+    </main>
+    <script>
+        function calcularDistancia() {
+            const P1 = [
+                parseFloat(document.getElementById("P1x").value),
+                parseFloat(document.getElementById("P1y").value),
+                parseFloat(document.getElementById("P1z").value)
+            ];
+            const d1 = [
+                parseFloat(document.getElementById("d1x").value),
+                parseFloat(document.getElementById("d1y").value),
+                parseFloat(document.getElementById("d1z").value)
+            ];
+            const P2 = [
+                parseFloat(document.getElementById("P2x").value),
+                parseFloat(document.getElementById("P2y").value),
+                parseFloat(document.getElementById("P2z").value)
+            ];
+            const d2 = [
+                parseFloat(document.getElementById("d2x").value),
+                parseFloat(document.getElementById("d2y").value),
+                parseFloat(document.getElementById("d2z").value)
+            ];
+
+            // vetor p->q
+            const PQ = [P2[0] - P1[0], P2[1] - P1[1], P2[2] - P1[2]];
+            // Produto vetorial d1 x d2
+            const crossProduct = [
+                d1[1] * d2[2] - d1[2] * d2[1],
+                d1[2] * d2[0] - d1[0] * d2[2],
+                d1[0] * d2[1] - d1[1] * d2[0]
+            ];
+            // módulo do produto vetorial
+            const magnitudeCrossProduct = Math.sqrt(
+                crossProduct[0] ** 2 + crossProduct[1] ** 2 + crossProduct[2] ** 2
+            );
+            // produto escalar
+            const dotProduct = crossProduct[0] * PQ[0] + crossProduct[1] * PQ[1] + crossProduct[2] * PQ[2];
+            // cálculo da distância
+            const distance = Math.abs(dotProduct) / magnitudeCrossProduct;
+            // exibindo o resultado
+            document.getElementById("resultado").textContent = `A distância entre as retas é: ${distance.toFixed(3)}`;
+        }
+    </script>
+</body>
+
+</html>

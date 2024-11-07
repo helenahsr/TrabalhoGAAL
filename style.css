@@ -74,6 +74,12 @@ h3 {
     margin-top: 20px;
 }
 
+.distanceForm2 {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
 .subtitulo {
     color: white;
     letter-spacing: 1px;
