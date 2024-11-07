@@ -62,7 +62,7 @@
         </ul>
     </nav>
     <main>
-        <h1>Calculadora de Distância de um Ponto a uma Reta</h1>
+        <h1>Distância de um Ponto a uma Reta</h1>
 
         <div class="distanceForm">
             <div>
@@ -98,12 +98,12 @@
 
 
         </div>
-        <button class="rodar" type="button" onclick="calculateDistance()">Calcular Distância</button>
+        <button class="rodar" type="button" onclick="calcularDistancia()">Calcular</button>
         <h3>Distância:</h3>
         <p class="result" id="result"></p>
 
         <script>
-            function calculateDistance() {
+            function calcularDistancia() {
                 // Ponto P0
                 const x0 = parseFloat(document.getElementById("x0").value);
                 const y0 = parseFloat(document.getElementById("y0").value);

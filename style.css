@@ -119,6 +119,10 @@ h3 {
     margin-left: 40px;
 }
 
+.mt-2 {
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 1000px) {
     div {
         width: 100%;
